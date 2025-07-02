@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.dbclient-js": "javascript",
+    "*.sqlbook": "sql",
+    "*.ndjson": "jsonl",
+    "stdio.h": "c",
+    "ostream": "cpp",
+    "iostream": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
+}
