@@ -1,18 +1,33 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(){
 
-    string s;
-    string s1;
-    cin >> s >> s1;
+int main() {
+    int T;
+    cin >> T;
+    cin.ignore(); 
 
-    string assign;
-    
-    for (string::iterator it = s.begin(); it != s.end(); ++it) {
-          for (string::iterator it = s1.begin(); it1 != s1.end(); ++it1) {
-       
+    while (T--) {
+        string line, S, X;
+        getline(cin, line);
+
+ 
+        stringstream ss(line);
+        ss >> S >> X;
+
+        string result;
+        int i = 0;
+        while (i < S.size()) {
+            if (S.substr(i, X.size()) == X) {
+                result += "#";
+                i += X.size();
+            } else {
+                result += S[i];
+                i++;
+            }
+        }
+
+        cout << result << endl;
     }
-    }
 
-
+    return 0;
 }
