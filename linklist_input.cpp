@@ -28,25 +28,36 @@ void insert_at_head(Node* &head,int value){
     head = newNode;
 
 };
-void insert_at_tail(Node* &head,int value){
+void insert_at_tail(Node* &head,Node* &tail,int value){
 
    Node* newNode = new Node(value);
 
     if(head==NULL){
      head = newNode;
+     tail = newNode;
      return;
-    }else{
-
-    Node* temp = head;
-    while(temp->next!=NULL){    
-         temp=temp->next;
     }
-    temp->next = newNode;
-
-    }
-
+    // Node* temp = head;
+    // while(temp->next!=NULL){    
+    //      temp=temp->next;
+    // }
+    tail->next = newNode;
+    // tail = tail->next;
+    tail = newNode;
 
 };
+
+void print_reverse(Node *temp){
+
+  if(temp==NULL){
+    return;
+  }
+
+  print_reverse(temp->next);
+
+  cout << temp->value << " ";
+
+}
 void insert_at_any_position(Node* &head,int index,int value){
 
    Node* newNode = new Node(value);
@@ -62,20 +73,24 @@ void insert_at_any_position(Node* &head,int index,int value){
 
 int main(){
 
-    Node* head = new Node(10);
-    Node* a = new Node(20);
-    Node* b = new Node(30);
-    Node* c = new Node(40);
+    Node* head = NULL;
+    Node* tail = NULL;
 
-    head->next = a;
-    a->next = b;
-    b->next = c;
+    int value;
+      while(1){
+        cin >> value;
+          if(value == -1){
+        break;
+         };
 
-    insert_at_head(head,100);
-    insert_at_any_position(head,4,5);
-    insert_at_tail(head,50);
-    insert_at_tail(head,60);
-    display(head);
+         insert_at_tail(head,tail,value);
+    }
+  
+  
+
+
+  
+print_reverse(head);
     
 
 }

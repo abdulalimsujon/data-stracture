@@ -28,22 +28,23 @@ void insert_at_head(Node* &head,int value){
     head = newNode;
 
 };
-void insert_at_tail(Node* &head,int value){
+void insert_at_tail(Node* &head,Node* &tail,int value){
 
    Node* newNode = new Node(value);
 
     if(head==NULL){
      head = newNode;
+     tail = newNode;
      return;
-    }else{
-
-    Node* temp = head;
-    while(temp->next!=NULL){    
-         temp=temp->next;
     }
-    temp->next = newNode;
+    // Node* temp = head;
+    // while(temp->next!=NULL){    
+    //      temp=temp->next;
+    // }
+    tail->next = newNode;
+    // tail = tail->next;
+    tail = newNode;
 
-    }
 
 
 };
@@ -65,16 +66,16 @@ int main(){
     Node* head = new Node(10);
     Node* a = new Node(20);
     Node* b = new Node(30);
-    Node* c = new Node(40);
+    Node* tail = new Node(40);
 
     head->next = a;
     a->next = b;
-    b->next = c;
+    b->next = tail;
 
     insert_at_head(head,100);
     insert_at_any_position(head,4,5);
-    insert_at_tail(head,50);
-    insert_at_tail(head,60);
+     insert_at_tail(head,tail,150);
+  
     display(head);
     
 
