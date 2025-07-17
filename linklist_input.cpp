@@ -114,6 +114,17 @@ tail = temp;
 
 }
 
+void sort(Node* head){
+
+  for(Node* i = head;i->next!=NULL;i=i->next){
+    for(Node* j = i->next;j!=NULL;j=j->next){
+      if(i->value > j->value){
+        swap(i->value,j->value);
+      }
+    }
+  }
+}
+
 
 int main(){
 
@@ -135,10 +146,12 @@ int main(){
 
   
 // print_reverse(head);
-display(head);
+// display(head);
 // delete_head(head);
 
-delete_any_position(head,2);
+// delete_any_position(head,2);
+   
+   sort(head);
    display(head); 
 
 }
