@@ -31,6 +31,11 @@ void delete_head(Node* &head){
 void insert_at_head(Node* &head,int value){
 
     Node* newNode = new Node(value);
+      if(head==NULL){
+     head = newNode;
+     tail = newNode;
+     return;
+    }
     newNode->next = head; 
     head = newNode;
 
