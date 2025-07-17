@@ -94,6 +94,26 @@ delete deleteNode;
 
 }
 
+void delete_at_tail(Node* head,Node* tail,int idx){
+
+  Node* temp = head;
+  
+for(int i=1;i<idx;i++){
+
+  temp = temp->next;
+    
+}
+
+Node* deleteNode = temp->next;
+
+temp->next = temp->next->next;
+
+
+delete deleteNode;
+tail = temp;
+
+}
+
 
 int main(){
 
