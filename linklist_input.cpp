@@ -76,6 +76,24 @@ void insert_at_any_position(Node* &head,int index,int value){
 
 };
 
+void delete_any_position(Node* head,int idx){
+
+  Node* temp = head;
+  
+for(int i=1;i<idx;i++){
+
+  temp = temp->next;
+    
+}
+
+Node* deleteNode = temp->next;
+
+temp->next = temp->next->next;
+
+delete deleteNode;
+
+}
+
 
 int main(){
 
@@ -98,8 +116,9 @@ int main(){
   
 // print_reverse(head);
 display(head);
-delete_head(head);
-display(head);
-    
+// delete_head(head);
+
+delete_any_position(head,2);
+   display(head); 
 
 }
