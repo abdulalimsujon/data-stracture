@@ -20,6 +20,13 @@ void display(Node* &head){
     }
 };
 
+void delete_head(Node* &head){
+
+  Node* deleteNode = head;
+  head = head->next;
+  delete deleteNode;
+}
+
 
 void insert_at_head(Node* &head,int value){
 
@@ -46,7 +53,6 @@ void insert_at_tail(Node* &head,Node* &tail,int value){
     tail = newNode;
 
 };
-"fdsjgkslljjjjjjjjjjjjjjjl"
 void print_reverse(Node *temp){
 
   if(temp==NULL){
@@ -90,7 +96,10 @@ int main(){
 
 
   
-print_reverse(head);
+// print_reverse(head);
+display(head);
+delete_head(head);
+display(head);
     
 
 }
