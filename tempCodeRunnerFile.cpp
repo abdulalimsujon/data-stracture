@@ -1,1 +1,1 @@
-  // insert_at_tail(head,50);
+    // print_forward(head);
