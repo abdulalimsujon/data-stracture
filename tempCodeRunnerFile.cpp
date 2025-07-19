@@ -1,1 +1,1 @@
-    // print_forward(head);
+    // delete_any_position(head,1);
