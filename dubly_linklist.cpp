@@ -35,9 +35,14 @@ void print_backward(Node* tail){
 
 };
 
-void insert_at_head(Node* &head,int val){
+void insert_at_head(Node* &head,Node* &tail,int val){
 
     Node* newNode = new Node(val);
+      if(head == NULL){
+        head = newNode;
+        tail = newNode;
+        return;
+    }
     newNode->next =  head;
     head->prev = newNode;
 
@@ -51,6 +56,7 @@ void insert_at_tail(Node* &head,Node* &tail,int val){
     if(head == NULL){
         head = newNode;
         tail = newNode;
+        return;
     }
     newNode->prev =  tail;
     tail->next = newNode;

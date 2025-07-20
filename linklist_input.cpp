@@ -28,7 +28,7 @@ void delete_head(Node* &head){
 }
 
 
-void insert_at_head(Node* &head,int value){
+void insert_at_head(Node* &head,Node* &tail ,int value){
 
     Node* newNode = new Node(value);
       if(head==NULL){
