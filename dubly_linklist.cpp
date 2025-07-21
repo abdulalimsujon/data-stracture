@@ -124,6 +124,14 @@ void delete_any_position(Node* &head,int idx){
 
 };
 
+void reverse_dubly_linklist(Node* head,Node* tail){
+
+    for(Node* i = head, *j = tail; i != j && j != i->prev; i=i->next,j=j->prev){
+
+        swap(i->val,j->val);
+    }
+}
+
 
 
 int main(){
@@ -147,8 +155,10 @@ int main(){
         //  insert_at_any_position(head,2,550);
         //   delete_head(head,tail);
         // delete_tail(head,tail);
-        delete_any_position(head,1);
+        // delete_any_position(head,1);
            print_forward(head);
+           reverse_dubly_linklist(head,tail);
+            print_forward(head);
     return 0;
 
 }

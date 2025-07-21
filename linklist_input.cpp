@@ -131,6 +131,19 @@ void sort(Node* head){
 }
 
 
+void reverse_linklist(Node* &head,Node* temp,Node* &tail){
+  if(temp->next == NULL){
+    head = temp;
+    return;
+  }
+  reverse_linklist(head,temp->next,tail);
+  temp->next->next = temp;
+  temp->next = NULL;
+  tail = temp;
+
+}
+
+
 int main(){
 
     Node* head = NULL;
@@ -156,7 +169,9 @@ int main(){
 
 // delete_any_position(head,2);
    
-   sort(head);
-   display(head); 
+  //  sort(head);
+  //  display(head); 
+   reverse_linklist(head,head,tail);
+   display(head);
 
 }
