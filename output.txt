@@ -1,6 +1,1 @@
-YES
-NO
-NO
-NO
-NO
-NO
+10 20 40 30 50 60 i am here

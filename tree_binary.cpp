@@ -1,38 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// traversal of tree 
-// 1.depthwise(preorder,inorder,postorder)
-// 2.levelwise
-
-
 class Node {
-    public:
+public:
     int val;
     Node* left;
     Node* right;
-    Node(int val){
+
+    Node(int val) {
         this->val = val;
         this->left = NULL;
         this->right = NULL;
     }
 };
 
-//print with preorder 
-
+// Preorder traversal: root -> left -> right
 void preorder(Node* root) {
+    if (root == NULL) return;
 
-    if(root == NULL){
-        return;
-    }
     cout << root->val << " ";
     preorder(root->left);
-    preorder(root->right);   
-
+    preorder(root->right);
 }
 
-int main(){
-
+int main() {
     Node* root = new Node(10);
     Node* a = new Node(20);
     Node* b = new Node(30);
@@ -41,12 +32,13 @@ int main(){
     Node* e = new Node(60);
 
     root->left = a;
-    root->right=b;
+    root->right = b;
     a->left = c;
     b->left = d;
     b->right = e;
+preorder(root);
+    cout << "i am here" << endl;
+    
 
- preorder(root);
-
- return 0;
+    return 0;
 }
