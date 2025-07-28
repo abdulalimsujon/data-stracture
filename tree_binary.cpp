@@ -21,7 +21,32 @@ void preorder(Node* root) {
     cout << root->val << " ";
     preorder(root->left);
     preorder(root->right);
-}
+};
+
+//level order 
+
+void levelOrder(Node* root){
+
+    queue<Node*> q;
+    
+    q.push(root);
+
+    while(!q.empty()){
+        
+    Node* f = q.front();
+    q.pop();
+   
+    cout << f->val << " ";
+
+    if(f->left != NULL){
+        q.push(f->left);
+    };
+    if(f->right != NULL){
+        q.push(f->right);
+    };
+    }
+
+};
 
 int main() {
     Node* root = new Node(10);
@@ -36,8 +61,8 @@ int main() {
     a->left = c;
     b->left = d;
     b->right = e;
-preorder(root);
-    cout << "i am here" << endl;
+// preorder(root);
+    levelOrder(root);
     
 
     return 0;
