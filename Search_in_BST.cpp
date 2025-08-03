@@ -60,19 +60,68 @@ bool search(Node* root,int v){
        
     }
 
+};
+
+//insert function
+
+void insert(Node* &root,int v){
+    if(root == NULL) root = new Node(v);
+
+    if(root->val > v ){
+        if(root->left == NULL){
+           root->left = new Node(v);   
+        }else{
+            insert(root->left,v);
+        }
+    }else{
+
+            if(root->right == NULL){
+           root->right = new Node(v);   
+        }else{
+            insert(root->right,v);
+
+        }
+
+    }
 }
+
+void levelOrder(Node* root){
+    
+    if(root == NULL){
+      cout << "No tree sir";
+      return;
+    } 
+    queue<Node*> q;
+    
+    q.push(root);
+
+    while(!q.empty()){
+        
+    Node* f = q.front();
+    q.pop();
+   
+    cout << f->val << " ";
+
+    if(f->left != NULL){
+        q.push(f->left);
+    };
+    if(f->right != NULL){
+        q.push(f->right);
+    };
+    }
+
+};
 int main(){
 
     Node* root = input_tree();
 
+ 
+
     int val;
 
     cin >> val;
+    insert(root,val);
+       levelOrder(root);
 
-    if(search(root,val)){
-        cout << "Found" << endl;
-    }else{
-        cout << "Not found" << endl;
-    }
-
+  
 }
