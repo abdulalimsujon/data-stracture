@@ -85,6 +85,24 @@ void insert(Node* &root,int v){
     }
 }
 
+// array to BST 
+
+Node* convert(int a[],int n,int l,int r){
+    while(l>r) return NULL;
+
+    int mid = (l + r)/2;
+    Node* root = new Node(a[mid]);
+    Node* leftRoot = convert(a,n,l,mid-1);
+    Node* rigtRoot = convert(a,n,mid+1,r);
+
+    root->left = leftRoot;
+    root->right = rightRoot;
+
+    return root;
+
+}
+
+
 void levelOrder(Node* root){
     
     if(root == NULL){
