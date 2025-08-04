@@ -93,7 +93,7 @@ Node* convert(int a[],int n,int l,int r){
     int mid = (l + r)/2;
     Node* root = new Node(a[mid]);
     Node* leftRoot = convert(a,n,l,mid-1);
-    Node* rigtRoot = convert(a,n,mid+1,r);
+    Node* rightRoot = convert(a,n,mid+1,r);
 
     root->left = leftRoot;
     root->right = rightRoot;
@@ -131,15 +131,22 @@ void levelOrder(Node* root){
 };
 int main(){
 
-    Node* root = input_tree();
+    // Node* root = input_tree();
 
  
 
-    int val;
+    int n;
 
-    cin >> val;
-    insert(root,val);
+    cin >> n;
+
+    int array[n];
+
+    for(int i = 0 ;i < n;i++){
+       cin >> array[i];
+    }
+
+  Node* root =   convert(array,n,0,n-1);
+    // insert(root,val);
        levelOrder(root);
-
   
 }
