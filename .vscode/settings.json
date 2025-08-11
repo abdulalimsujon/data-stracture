@@ -12,7 +12,23 @@
     "forward_list": "cpp",
     "list": "cpp",
     "vector": "cpp",
-    "string_view": "cpp"
+    "string_view": "cpp",
+    "fstream": "cpp",
+    "future": "cpp",
+    "optional": "cpp",
+    "shared_mutex": "cpp",
+    "sstream": "cpp",
+    "thread": "cpp",
+    "tuple": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "memory": "cpp",
+    "istream": "cpp",
+    "streambuf": "cpp",
+    "functional": "cpp",
+    "regex": "cpp",
+    "valarray": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
