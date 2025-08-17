@@ -6,26 +6,23 @@ int main() {
     cin >> T;
 
     while (T--) {
-        int N;
-        cin >> N;
-        int A[1001]; 
+        int n;
+        cin >> n;
+        set <int> s;
 
-        for (int i = 0; i < N; i++) {
-            cin >> A[i];
+        int size = n;  
+
+        while (n--) {
+            int v;
+            cin >> v;
+            s.insert(v);
         }
-
-        int flag = 1;
-        for (int i = 1; i < N; i++) {
-            if (A[i] < A[i - 1]) {
-                flag = 0;
-                break;
-            }
+        
+        for(int x : s){
+            cout << x << " ";
         }
-
-        if (flag)
-            cout << "YES" << endl;
-        else
-            cout << "NO" << endl;
+     
+        cout << "\n";
     }
 
     return 0;
